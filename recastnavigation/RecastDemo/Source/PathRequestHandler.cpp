@@ -91,9 +91,9 @@ void mergeAndExportTransformedOBJs(const std::vector<Transform>& entries, const 
 
             // Ordem ZYX: GTA usa Y (heading), Z (bank), X (pitch), então podemos tentar ZYX
             glm::mat4 transform = glm::eulerAngleYXZ(
-                glm::radians(rotationDegrees[2]), // Z (roll)
-                glm::radians(rotationDegrees[1]), // Y (pitch)
-                glm::radians(rotationDegrees[0])  // X (yaw)
+                glm::radians(rotationDegrees[2]), // Z (yaw)
+                glm::radians(rotationDegrees[0]), // Y (pitch)
+                glm::radians(rotationDegrees[1])  // X (roll)
             );
 
             glm::vec4 input = glm::vec4(x, y, z, 1.0f);
